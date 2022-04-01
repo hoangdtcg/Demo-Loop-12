@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime</title>
+</head>
+<body>
+<script>
+    //manhinh
+    //ketqua
+    //camel - dayofmonth - dayOfMonth
+    function checkPrime() {
+        let count = 0;
+        let N = 2
+        while (count < 20){
+            if(N < 2){
+                alert(N + " khong phai la so nguyen to");
+                return;
+            }
+            let i = 2;
+            while (i < N) {
+                if (N % i === 0) {
+                    alert(N + " khong phai la so nguyen to");
+                    return; //End
+                }
+
+                i = i + 1;
+            }
+        }
+
+
+        alert(N + " là số nguyên tố");
+    }
+
+    // checkPrime2();
+
+
+    //For
+    function checkPrime2(N) {
+        // let N = +prompt("Nhap N")
+        if(N < 2){
+            return false;
+        }
+        for (let i = 2; i < N; i++) {
+            if(N % i === 0){
+                return false; //End
+            }
+        }
+        return true;
+    }
+
+    let a = checkPrime2(15);//false
+    console.log(a)
+    checkPrime2(37);//true
+    checkPrime2(99);//false
+
+    function primeList() {
+        let x = +prompt("Nhap so so nguyen to can in ra");
+        let count = 0;
+        let N = 0;
+        while (count < x){
+            if(checkPrime2(N) === true){
+                count++;
+                console.log(N + " la so nguyen to");
+            }
+            N++;
+        }
+    }
+
+    // primeList();
+</script>
+</body>
+</html>
